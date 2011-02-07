@@ -1,0 +1,5 @@
+homepage-rdf
+=============
+Display informations from your FOAF profile.
+It uses XSL and a PHP script to render as HTML.
+
