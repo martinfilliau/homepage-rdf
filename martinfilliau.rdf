@@ -44,6 +44,7 @@
     <foaf:interest rdf:resource="http://dbpedia.org/resource/Folksonomy" dc:title="Folksonomy"/>
     <foaf:interest rdf:resource="http://dbpedia.org/resource/Marketing" dc:title="Marketing"/>
     <bio:olb xml:lang="en">Student in Information Technology, currently in MSc in Computer Science at Oxford Brookes University (UK), in an exchange program with SUPINFO (France).</bio:olb>
+    <bio:olb xml:lang="fr">Etudiant en technologies de l'information, actuellement en MSc Computer Science a l'universite d'Oxford Brookes, en echange avec SUPINFO.</bio:olb>
     <!--
     <bio:biography xml:lang="en"><p>Student in Information Technology, currently in MSc in Computer Science at Oxford Brookes University (UK), in an exchange program with SUPINFO (France).</p>
 <p>Interested by software development and knowledge management. Also interested by semantic web technologies, cloud computing, data visualization, agile management, marketing and future of information technology.</p>
@@ -135,8 +136,8 @@
     	<foaf:Project>
     	<foaf:name>Catchmystream</foaf:name>
     	<dc:title>Catchmystream</dc:title>
-    	<dc:description>Catchmystream is an experimental project of a platform able ton consume informations that we publish in various websites (Twitter, Delicious, Flickr, Evernote etc) and backup them in a personal datastore; and then be able to explore your informations via faceted search, in an uniformized way.</dc:description>
-    	<!--<dc:description xml:lang="fr">Catchmystream est un projet expérimental de plateforme capable de consommer des flux d'informations provenant d'applications web (Twitter, Delicious, Flickr, Evernote etc) que nous utilisons et de les sauvegarder dans son propre entrepôt de données; puis de pouvoir explorer ses informations, via de la recherche par facettes, d'une manière uniformisée.</dc:description>-->
+    	<dc:description xml:lang="en">Catchmystream is an experimental project of a platform able ton consume informations that we publish in various websites (Twitter, Delicious, Flickr, Evernote etc) and backup them in a personal datastore; and then be able to explore your informations via faceted search, in an uniformized way.</dc:description>
+    	<dc:description xml:lang="fr">Catchmystream est un projet expérimental de plateforme capable de consommer des flux d'informations provenant d'applications web (Twitter, Delicious, Flickr, Evernote etc) que nous utilisons et de les sauvegarder dans son propre entrepôt de données; puis de pouvoir explorer ses informations, via de la recherche par facettes, d'une manière uniformisée.</dc:description>
     	<foaf:homepage rdf:resource="https://github.com/martinfilliau/catchmystream"/>
     	<rdfs:seeAlso rdf:resource="https://github.com/martinfilliau/catchmystream"/>
     	</foaf:Project>

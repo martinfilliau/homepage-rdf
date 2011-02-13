@@ -36,7 +36,7 @@
                 <h1><xsl:value-of select="foaf:name" /></h1>
         </div>
        	<div id="content">
-                <xsl:value-of select="$bio" />
+                <p><xsl:value-of select="$bio" /></p>
                 <div class="groupbox">
                     <h2>Profiles</h2>
                     <p>
@@ -117,8 +117,8 @@
    </xsl:template>
 
    <xsl:template match="foaf:interest">
-      <a href="{foaf:interest/@rdf:resource}">
-         <xsl:value-of select="foaf:interest/@dc:title"/>
+      <a href="{@rdf:resource}">
+         <xsl:value-of select="@dc:title"/>
       </a>
    </xsl:template>	
 
