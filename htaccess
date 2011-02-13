@@ -1,0 +1,4 @@
+AddHandler ae_xslt rdf
+Action ae_xslt /~martin/index.php
+DirectoryIndex index.php index.html
+
