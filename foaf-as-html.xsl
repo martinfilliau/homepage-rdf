@@ -106,7 +106,8 @@
          <xsl:value-of select="foaf:Project/foaf:name/text()"/>
       </a>
       <p>
-      <xsl:value-of select="foaf:Project/dc:description/text()"/>
+      <xsl:apply-templates select="foaf:Project/dc:description"/>
+      <!--<xsl:value-of select="foaf:Project/dc:description/text()"/>-->
       </p>
    </xsl:template>
 
@@ -121,6 +122,10 @@
          <xsl:value-of select="@dc:title"/>
       </a>
    </xsl:template>	
+
+	<xsl:template match="dc:description">
+      <xsl:value-of select="//dc:description[@xml:lang=$language]"/>
+	</xsl:template>
 
    <xsl:template match="foaf:holdsAccount" mode="body">
 		<xsl:variable name="link" select="./foaf:OnlineAccount/@rdf:about" />
