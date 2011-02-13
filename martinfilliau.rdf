@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet href="foaf-as-html.xsl" type="text/xsl"?>
+<rdf:RDF
+      xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+      xmlns:rdfs="http://www.w3.org/2000/01/rdf-schema#"
+      xmlns:foaf="http://xmlns.com/foaf/0.1/"
+      xmlns:bio="http://purl.org/vocab/bio/0.1/"
+      xmlns:dc="http://purl.org/dc/elements/1.1/">
+
+<foaf:PersonalProfileDocument rdf:about="http://martin.filliau.com/martinfilliau.rdf">
+	<foaf:maker rdf:resource="#MartinFilliau"/>
+    <foaf:primaryTopic rdf:resource="#MartinFilliau"/>
+</foaf:PersonalProfileDocument>
+
+<foaf:Person rdf:ID="MartinFilliau">
+    <foaf:name>Martin Filliau</foaf:name>
+    <foaf:title xml:lang="fr">M.</foaf:title>
+	<foaf:title xml:lang="en">Mr</foaf:title>
+    <foaf:givenname>Martin</foaf:givenname>
+    <foaf:family_name>Filliau</foaf:family_name>
+    <foaf:nick>nitramf</foaf:nick>
+    <foaf:gender xml:lang="en">male</foaf:gender>
+    <foaf:gender xml:lang="fr">masculin</foaf:gender>
+    <foaf:dateOfBirth>1988-07-07</foaf:dateOfBirth>
+    <foaf:mbox>martin@filliau.com</foaf:mbox>
+    <foaf:mbox_sha1sum>60869ffbf7262c2d530f266adfb682c59a51813d</foaf:mbox_sha1sum>
+    <foaf:homepage>
+    	<foaf:document rdf:about="http://martin.filliau.com/">
+    		<dc:title xml:lang="en">Homepage of Martin Filliau</dc:title>
+    		<dc:title xml:lang="fr">Page d'accueil de Martin Filliau</dc:title>
+    		<foaf:maker rdf:resource="#MartinFilliau"/>
+    	</foaf:document>
+    </foaf:homepage>
+    <foaf:schoolHomepage rdf:resource="http://www.supinfo.com" dc:title="SUPINFO International University"/>
+    <foaf:schoolHomepage rdf:resource="http://www.brookes.ac.uk" dc:title="Oxford Brookes University"/>
+    <foaf:interest rdf:resource="http://dbpedia.org/resource/Jazz" dc:title="Jazz"/>
+    <foaf:interest rdf:resource="http://dbpedia.org/resource/Linked_Data" dc:title="Linked Data"/>
+    <foaf:interest rdf:resource="http://dbpedia.org/resource/Rock_and_roll" dc:title="Rock and Roll"/>
+    <foaf:interest rdf:resource="http://dbpedia.org/resource/Semantic_wiki" dc:title="Semantic Wiki"/>
+    <foaf:interest rdf:resource="http://dbpedia.org/resource/RDF" dc:title="RDF"/>
+    <foaf:interest rdf:resource="http://dbpedia.org/resource/Semantic_Web" dc:title="Semantic Web"/>
+    <foaf:interest rdf:resource="http://dbpedia.org/resource/Knowledge_Management" dc:title="Knowledge Management"/>
+    <foaf:interest rdf:resource="http://dbpedia.org/resource/Data_visualization" dc:title="Data Visualization"/>
+    <foaf:interest rdf:resource="http://dbpedia.org/resource/Folksonomy" dc:title="Folksonomy"/>
+    <foaf:interest rdf:resource="http://dbpedia.org/resource/Marketing" dc:title="Marketing"/>
+    <bio:olb xml:lang="en">Student in Information Technology, currently in MSc in Computer Science at Oxford Brookes University (UK), in an exchange program with SUPINFO (France).</bio:olb>
+    <!--
+    <bio:biography xml:lang="en"><p>Student in Information Technology, currently in MSc in Computer Science at Oxford Brookes University (UK), in an exchange program with SUPINFO (France).</p>
+<p>Interested by software development and knowledge management. Also interested by semantic web technologies, cloud computing, data visualization, agile management, marketing and future of information technology.</p>
+	</bio:biography>
+	-->
+	<bio:keywords xml:lang="en">Web development, web frameworks, Semantic Web, REST, geek, Open Source, life hacks, web services, API, performances, pervasive computing.</bio:keywords>
+    <foaf:knows>
+        <foaf:Person>
+            <foaf:name>Vivien Barousse</foaf:name>
+            <foaf:mbox_sha1sum>3932018530f5f977e13ff51638dbdbda083d3932</foaf:mbox_sha1sum>
+            <rdfs:seeAlso rdf:resource="http://viv.aperigeek.com/viv.rdf"/>
+            <foaf:homepage rdf:resource="http://viv.aperigeek.com/"/>
+        </foaf:Person>
+    </foaf:knows>
+    <foaf:knows>
+        <foaf:Person>
+            <foaf:name>Nicolas Labey</foaf:name>
+            <foaf:mbox_sha1sum>f75dbc6dba6e0907397a55f4d710dcc0c55fbbdc</foaf:mbox_sha1sum>
+            <foaf:homepage rdf:resource="http://www.nicolaslabey.com"/>
+        </foaf:Person>
+    </foaf:knows>
+    
+    <!-- accounts -->
+    <foaf:holdsAccount>
+        <foaf:OnlineAccount rdf:about="http://www.flickr.com/photos/nitramf">
+            <foaf:accountName>nitramf</foaf:accountName>
+            <foaf:accountServiceHomepage rdf:resource="http://www.flickr.com/"/>
+        </foaf:OnlineAccount>
+    </foaf:holdsAccount>
+    <foaf:holdsAccount>
+        <foaf:OnlineAccount rdf:about="http://www.lastfm.fr/user/nitramf">
+            <foaf:accountName>nitramf</foaf:accountName>
+            <foaf:accountServiceHomepage rdf:resource="http://www.last.fm/"/>
+        </foaf:OnlineAccount>
+    </foaf:holdsAccount>
+    <foaf:holdsAccount>
+        <foaf:OnlineAccount rdf:about="http://www.diigo.com/~martinfilliau">
+            <foaf:accountName>martinfilliau</foaf:accountName>
+            <foaf:accountServiceHomepage rdf:resource="http://www.diigo.com/"/>
+        </foaf:OnlineAccount>
+    </foaf:holdsAccount>
+    <foaf:holdsAccount>
+        <foaf:OnlineAccount rdf:about="http://www.delicious.com/nitramf">
+            <foaf:accountName>nitramf</foaf:accountName>
+            <foaf:accountServiceHomepage rdf:resource="http://www.delicious.com/"/>
+        </foaf:OnlineAccount>
+    </foaf:holdsAccount>
+    <foaf:holdsAccount>
+        <foaf:OnlineAccount rdf:about="http://twitter.com/martinfilliau">
+            <foaf:accountName>martinfilliau</foaf:accountName>
+            <foaf:accountServiceHomepage rdf:resource="http://www.twitter.com/"/>
+        </foaf:OnlineAccount>
+    </foaf:holdsAccount>
+    <foaf:holdsAccount>
+        <foaf:OnlineAccount rdf:about="http://www.librarything.com/catalog/nitram">
+            <foaf:accountName>nitramf</foaf:accountName>
+            <foaf:accountServiceHomepage rdf:resource="http://www.librarything.com/"/>
+        </foaf:OnlineAccount>
+    </foaf:holdsAccount>
+    <foaf:holdsAccount>
+        <foaf:OnlineAccount rdf:about="http://www.github.com/martinfilliau">
+            <foaf:accountName>martinfilliau</foaf:accountName>
+            <foaf:accountServiceHomepage rdf:resource="http://www.github.com/"/>
+        </foaf:OnlineAccount>
+    </foaf:holdsAccount>
+    <foaf:holdsAccount>
+        <foaf:OnlineAccount rdf:about="http://uk.linkedin.com/in/martinfilliau">
+            <foaf:accountServiceHomepage rdf:resource="http://www.linkedin.com/"/>
+        </foaf:OnlineAccount>
+    </foaf:holdsAccount>
+    <foaf:holdsAccount>
+    	<foaf:OnlineAccount rdf:about="http://www.google.com/profiles/martin.filliau">
+    		<foaf:accountServiceHomepage rdf:resource="http://www.google.com/"/>
+    	</foaf:OnlineAccount>
+    </foaf:holdsAccount>
+    <foaf:holdsAccount>
+    	<foaf:OnlineAccount rdf:about="http://www.runkeeper.com/user/martinfilliau">
+    		<foaf:accountServiceHomepage rdf:resource="http://www.runkeeper.com/"/>
+    	</foaf:OnlineAccount>
+    </foaf:holdsAccount>
+    
+    <!-- projects -->    
+    <foaf:currentProject>
+    	<foaf:Project>
+    	<foaf:name>Makampuni</foaf:name>
+    	</foaf:Project>
+    </foaf:currentProject>
+    <foaf:currentProject>
+    	<foaf:Project>
+    	<foaf:name>Catchmystream</foaf:name>
+    	<dc:title>Catchmystream</dc:title>
+    	<dc:description>Catchmystream is an experimental project of a platform able ton consume informations that we publish in various websites (Twitter, Delicious, Flickr, Evernote etc) and backup them in a personal datastore; and then be able to explore your informations via faceted search, in an uniformized way.</dc:description>
+    	<!--<dc:description xml:lang="fr">Catchmystream est un projet expérimental de plateforme capable de consommer des flux d'informations provenant d'applications web (Twitter, Delicious, Flickr, Evernote etc) que nous utilisons et de les sauvegarder dans son propre entrepôt de données; puis de pouvoir explorer ses informations, via de la recherche par facettes, d'une manière uniformisée.</dc:description>-->
+    	<foaf:homepage rdf:resource="https://github.com/martinfilliau/catchmystream"/>
+    	<rdfs:seeAlso rdf:resource="https://github.com/martinfilliau/catchmystream"/>
+    	</foaf:Project>
+    </foaf:currentProject>
+    <foaf:currentProject>
+    	<foaf:Project>
+    	<foaf:name>Kindle Clippings to RDF</foaf:name>
+    	<foaf:homepage rdf:resource="https://github.com/martinfilliau/Kindle-Clippings-to-RDF"/>
+    	<rdfs:seeAlso rdf:resource="https://github.com/martinfilliau/Kindle-Clippings-to-RDF"/>
+    	</foaf:Project>
+    </foaf:currentProject>
+    <foaf:pastProject>
+    	<foaf:Project>
+    	<foaf:name>GlobusDataPad</foaf:name>
+    	<foaf:homepage rdf:resource="http://code.google.com/p/globusdatapad/"/>
+    	<rdfs:seeAlso rdf:resource="http://code.google.com/p/globusdatapad/"/>
+    	</foaf:Project>
+    </foaf:pastProject>
+</foaf:Person>
+</rdf:RDF>
