@@ -4,8 +4,12 @@
                 xmlns:xsl="http://www.w3.org/1999/XSL/Transform"
                 xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
                 xmlns:foaf="http://xmlns.com/foaf/0.1/"
-      			xmlns:bio="http://purl.org/vocab/bio/0.1/">
+      			xmlns:bio="http://purl.org/vocab/bio/0.1/"
+      			xmlns:dc="http://purl.org/dc/elements/1.1/">
    <xsl:output method="html" media-type="text/html"/>
+   
+   <xsl:param name="language" />	<!-- en OR fr -->
+   
    <xsl:variable name="fullName" select="/rdf:RDF/foaf:Person[1]/foaf:name/text()"/>
    <xsl:variable name="bio" select="/rdf:RDF/foaf:Person[1]/bio:olb/text()" />
    <xsl:variable name="email" select="/rdf:RDF/foaf:Person[1]/foaf:mbox/text()"/>
@@ -15,8 +19,7 @@
          <head profile="http://gmpg.org/xfn/11">
             <title><xsl:value-of select="$fullName"/></title>
 			<link rel="stylesheet" type="text/css" href="mf.css" media="screen" />
-            <link rel="meta" type="application/rdf+xml" title="FOAF" href="mf.rdf"/>
-            <link rel="me" type="text/html" href="http://www.google.com/profiles/martin.filliau"/>
+            <link rel="meta" type="application/rdf+xml" title="FOAF" href="martinfilliau.rdf"/>
             <link rel="openid.server" href="https://www.myopenid.com/server" />
 			<link rel="openid.delegate" href="http://martinfilliau.myopenid.com" />
             <xsl:for-each select="/rdf:RDF/foaf:Person[1]/foaf:holdsAccount">
@@ -74,6 +77,16 @@
 		            </ul>
                 	</p>
                 </div>
+                <div class="groupbox">
+                	<h2>Interests</h2>
+                	<p>
+		            <ul>
+		               <xsl:for-each select="foaf:interest">
+		               		<li><xsl:apply-templates select="."/></li>
+   		               </xsl:for-each>
+		            </ul>
+                	</p>
+                </div>
                 </div>
                 
                 <div id="footer">
@@ -92,6 +105,9 @@
       <a href="{foaf:Project/foaf:homepage/@rdf:resource}">
          <xsl:value-of select="foaf:Project/foaf:name/text()"/>
       </a>
+      <p>
+      <xsl:value-of select="foaf:Project/dc:description/text()"/>
+      </p>
    </xsl:template>
 
    <xsl:template match="foaf:pastProject">
@@ -99,6 +115,12 @@
          <xsl:value-of select="foaf:Project/foaf:name/text()"/>
       </a>
    </xsl:template>
+
+   <xsl:template match="foaf:interest">
+      <a href="{foaf:interest/@rdf:resource}">
+         <xsl:value-of select="foaf:interest/@dc:title"/>
+      </a>
+   </xsl:template>	
 
    <xsl:template match="foaf:holdsAccount" mode="body">
 		<xsl:variable name="link" select="./foaf:OnlineAccount/@rdf:about" />
