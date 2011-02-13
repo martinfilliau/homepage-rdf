@@ -3,3 +3,5 @@ homepage-rdf
 Display informations from your FOAF profile.
 It uses XSL and a PHP script to render as HTML.
 
+Inspired from: http://deletethis.net/dave/?uri=http%3A%2F%2Fcerealnumber.livejournal.com%2F17346.html
+
