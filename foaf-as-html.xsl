@@ -9,7 +9,14 @@
    <xsl:output method="html" media-type="text/html"/>
    
    <xsl:param name="language" />	<!-- en OR fr -->
-   
+   <xsl:param name="profilesBoxName" />
+   <xsl:param name="currentProjectsBoxName" />
+   <xsl:param name="pastProjectsBoxName" />
+   <xsl:param name="peopleIKnowBoxName" />
+   <xsl:param name="interestsBoxName" />
+   <xsl:param name="publicationsBoxName" />
+   <xsl:param name="contactLabel" />
+
    <xsl:variable name="fullName" select="/rdf:RDF/foaf:Person[1]/foaf:name/text()"/>
    <xsl:variable name="bio" select="/rdf:RDF/foaf:Person[1]/bio:olb/text()" />
    <xsl:variable name="email" select="/rdf:RDF/foaf:Person[1]/foaf:mbox/text()"/>
@@ -38,7 +45,7 @@
        	<div id="content">
                 <p><xsl:value-of select="$bio" /></p>
                 <div class="groupbox">
-                    <h2>Profiles</h2>
+                    <h2><xsl:value-of select="$profilesBoxName"/></h2>
                     <p>
                         <ul>
                             <xsl:for-each select="foaf:holdsAccount">
@@ -48,7 +55,7 @@
                     </p>
                 </div>
                 <div class="groupbox">
-                	<h2>Current projects</h2>
+                    <h2><xsl:value-of select="$currentProjectsBoxName"/></h2>
                 	<p>
 		            <ul>
 		               <xsl:for-each select="foaf:currentProject">
@@ -58,7 +65,7 @@
                 	</p>
                 </div>
                 <div class="groupbox">
-                	<h2>Past projects</h2>
+                    <h2><xsl:value-of select="$pastProjectsBoxName"/></h2>
                 	<p>
 		            <ul>
 		               <xsl:for-each select="foaf:pastProject">
@@ -68,7 +75,7 @@
                 	</p>
                 </div>
                 <div class="groupbox">
-                	<h2>People I know</h2>
+                    <h2><xsl:value-of select="$peopleIKnowBoxName"/></h2>
                 	<p>
 		            <ul>
 		               <xsl:for-each select="foaf:knows">
@@ -78,7 +85,7 @@
                 	</p>
                 </div>
                 <div class="groupbox">
-                	<h2>Interests</h2>
+                    <h2><xsl:value-of select="$interestsBoxName"/></h2>
                 	<p>
 		            <ul>
 		               <xsl:for-each select="foaf:interest">
@@ -87,10 +94,20 @@
 		            </ul>
                 	</p>
                 </div>
+                <div class="groupbox">
+                    <h2><xsl:value-of select="$publicationsBoxName"/></h2>
+                	<p>
+		            <ul>
+		               <xsl:for-each select="foaf:publication">	<!-- TODO -->
+		               		<li><xsl:apply-templates select="."/></li>
+   		               </xsl:for-each>
+		            </ul>
+                	</p>
+                </div>
                 </div>
                 
                 <div id="footer">
-	   				<p><strong>Contact: </strong><xsl:value-of select="$email" /></p>
+	   				<p><strong><xsl:value-of select="$contactLabel"/>: </strong><xsl:value-of select="$email" /></p>
 				</div>
                 </div>
    </xsl:template>
@@ -105,16 +122,20 @@
       <a href="{foaf:Project/foaf:homepage/@rdf:resource}">
          <xsl:value-of select="foaf:Project/foaf:name/text()"/>
       </a>
-      <p>
-      <xsl:apply-templates select="foaf:Project/dc:description"/>
-      <!--<xsl:value-of select="foaf:Project/dc:description/text()"/>-->
-      </p>
+      <p><xsl:apply-templates select="foaf:Project/dc:description"/></p>
    </xsl:template>
 
    <xsl:template match="foaf:pastProject">
       <a href="{foaf:Project/foaf:homepage/@rdf:resource}">
          <xsl:value-of select="foaf:Project/foaf:name/text()"/>
       </a>
+   </xsl:template>
+   
+   <xsl:template match="foaf:publications">
+      <a href="{foaf:publications/@rdf:resource}">
+         <xsl:value-of select="foaf:publications/dc:title/text()"/>
+      </a>
+      <p><xsl:apply-templates select="foaf:publications/dc:description"/></p>   		
    </xsl:template>
 
    <xsl:template match="foaf:interest">
@@ -125,6 +146,10 @@
 
 	<xsl:template match="dc:description">
       <xsl:value-of select="//dc:description[@xml:lang=$language]"/>
+	</xsl:template>
+
+	<xsl:template match="dc:title">
+      <xsl:value-of select="//dc:title[@xml:lang=$language]"/>
 	</xsl:template>
 
    <xsl:template match="foaf:holdsAccount" mode="body">
@@ -143,7 +168,8 @@
             	<xsl:when test="$accountService = 'http://www.last.fm/'">Last.fm</xsl:when>
             	<xsl:when test="$accountService = 'http://www.delicious.com/'">Delicious</xsl:when>
             	<xsl:when test="$accountService = 'http://www.google.com/'">Google</xsl:when>
-            	<xsl:when test="$accountService = 'http://www.runkeeper.com/'">RunKeeper</xsl:when>                                   
+            	<xsl:when test="$accountService = 'http://www.runkeeper.com/'">RunKeeper</xsl:when>   
+            	<xsl:when test="$accountService = 'http://posterous.com/'">Posterous</xsl:when>                                
             	<xsl:otherwise>
             		<xsl:value-of select="$accountService" />
             	</xsl:otherwise>
