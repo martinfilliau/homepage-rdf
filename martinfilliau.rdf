@@ -75,6 +75,17 @@
         </foaf:OnlineAccount>
     </foaf:holdsAccount>
     <foaf:holdsAccount>
+        <foaf:OnlineAccount rdf:about="http://martinfilliau.posterous.com">
+            <foaf:accountServiceHomepage rdf:resource="http://posterous.com/"/>
+        </foaf:OnlineAccount>
+    </foaf:holdsAccount>
+    <foaf:holdsAccount>
+        <foaf:OnlineAccount rdf:about="http://www.delicious.com/nitramf">
+            <foaf:accountName>nitramf</foaf:accountName>
+            <foaf:accountServiceHomepage rdf:resource="http://www.delicious.com/"/>
+        </foaf:OnlineAccount>
+    </foaf:holdsAccount>
+    <foaf:holdsAccount>
         <foaf:OnlineAccount rdf:about="http://www.lastfm.fr/user/nitramf">
             <foaf:accountName>nitramf</foaf:accountName>
             <foaf:accountServiceHomepage rdf:resource="http://www.last.fm/"/>
@@ -84,12 +95,6 @@
         <foaf:OnlineAccount rdf:about="http://www.diigo.com/~martinfilliau">
             <foaf:accountName>martinfilliau</foaf:accountName>
             <foaf:accountServiceHomepage rdf:resource="http://www.diigo.com/"/>
-        </foaf:OnlineAccount>
-    </foaf:holdsAccount>
-    <foaf:holdsAccount>
-        <foaf:OnlineAccount rdf:about="http://www.delicious.com/nitramf">
-            <foaf:accountName>nitramf</foaf:accountName>
-            <foaf:accountServiceHomepage rdf:resource="http://www.delicious.com/"/>
         </foaf:OnlineAccount>
     </foaf:holdsAccount>
     <foaf:holdsAccount>
@@ -130,6 +135,9 @@
     <foaf:currentProject>
     	<foaf:Project>
     	<foaf:name>Makampuni</foaf:name>
+    	<dc:title>Makampuni</dc:title>
+    	<dc:description xml:lang="en">Project of collaborative platform to describe companies and actors around them. Using semantic web technologies, we could provide an open platform usable for jobs research.</dc:description>
+    	<dc:description xml:lang="fr">Projet de plateforme collaborative permettant de décrire des entreprises et les acteurs qui gravitent autour. En utilisant les technologies du web sématique, il serait possible de fournir une plateforme ouverte, utilisable par exemple pour les recherches d'emplois.</dc:description>
     	</foaf:Project>
     </foaf:currentProject>
     <foaf:currentProject>
@@ -145,6 +153,9 @@
     <foaf:currentProject>
     	<foaf:Project>
     	<foaf:name>Kindle Clippings to RDF</foaf:name>
+    	<dc:title>Kindle Clippings to RDF</dc:title>
+    	<dc:description xml:lang="en">Simple script to structure data from the clipping of Kindle to RDF/XML.</dc:description>
+    	<dc:description xml:lang="fr">Script permettant de structurer en RDF/XML les informations provenant du clipping de Kindle.</dc:description>
     	<foaf:homepage rdf:resource="https://github.com/martinfilliau/Kindle-Clippings-to-RDF"/>
     	<rdfs:seeAlso rdf:resource="https://github.com/martinfilliau/Kindle-Clippings-to-RDF"/>
     	</foaf:Project>
@@ -152,6 +163,9 @@
     <foaf:pastProject>
     	<foaf:Project>
     	<foaf:name>GlobusDataPad</foaf:name>
+    	<dc:title>GlobusDataPad</dc:title>
+    	<dc:description xml:lang="en">Group project made for a school work. It has been developed with Microsoft .NET 4 framework technologies (Entity Framework, ASP.NET MVC 2).</dc:description>
+    	<dc:description xml:lang="fr">Projet de groupe réalisé dans le cadre d'un travail scolaire (Master 1), en utilisant les technologies du framework .NET 4 (Entity Framework, ASP.NET MVC 2).</dc:description>
     	<foaf:homepage rdf:resource="http://code.google.com/p/globusdatapad/"/>
     	<rdfs:seeAlso rdf:resource="http://code.google.com/p/globusdatapad/"/>
     	</foaf:Project>
