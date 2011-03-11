@@ -183,6 +183,16 @@
         <rdfs:seeAlso rdf:resource="https://github.com/martinfilliau/context-aware-android"/>
         </foaf:Project>
     </foaf:currentProject>
+    <foaf:currentProject>
+        <foaf:Project>
+        <foaf:name>Homepage RDF</foaf:name>
+        <dc:title>Homepage RDF</dc:title>
+        <dc:description xml:lang="en">Personal homepage generated from FOAF profile</dc:description>
+        <dc:description xml:lang="fr">Page personnelle générée depuis un profil FOAF</dc:description>
+        <foaf:homepage rdf:resource="https://github.com/martinfilliau/homepage-rdf"/>
+        <rdfs:seeAlso rdf:resource="https://github.com/martinfilliau/homepage-rdf"/>
+        </foaf:Project>
+    </foaf:currentProject>
     <foaf:pastProject>
     	<foaf:Project>
     	<foaf:name>GlobusDataPad</foaf:name>
