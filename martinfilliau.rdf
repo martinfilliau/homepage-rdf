@@ -130,6 +130,11 @@
     		<foaf:accountServiceHomepage rdf:resource="http://www.runkeeper.com/"/>
     	</foaf:OnlineAccount>
     </foaf:holdsAccount>
+    <foaf:holdsAccount>
+    	<foaf:OnlineAccount rdf:about="http://beta.memolane.com/martinfilliau">
+    		<foaf:accountServiceHomepage rdf:resource="http://beta.memolane.com/"/>
+    	</foaf:OnlineAccount>
+    </foaf:holdsAccount>
     
     <!-- projects -->    
     <foaf:currentProject>
@@ -144,8 +149,8 @@
     	<foaf:Project>
     	<foaf:name>Catchmystream</foaf:name>
     	<dc:title>Catchmystream</dc:title>
-    	<dc:description xml:lang="en">Catchmystream is an experimental project of a platform able ton consume informations that we publish in various websites (Twitter, Delicious, Flickr, Evernote etc) and backup them in a personal datastore; and then be able to explore your informations via faceted search, in an uniformized way.</dc:description>
-    	<dc:description xml:lang="fr">Catchmystream est un projet expérimental de plateforme capable de consommer des flux d'informations provenant d'applications web (Twitter, Delicious, Flickr, Evernote etc) que nous utilisons et de les sauvegarder dans son propre entrepôt de données; puis de pouvoir explorer ses informations, via de la recherche par facettes, d'une manière uniformisée.</dc:description>
+    	<dc:description xml:lang="en">Experimental project of a platform able ton consume informations that we publish in various websites (Twitter, Delicious, Flickr, Evernote etc) and backup them in a personal datastore; and then be able to explore your informations via faceted search, in an uniformized way.</dc:description>
+    	<dc:description xml:lang="fr">Projet expérimental de plateforme capable de consommer des flux d'informations provenant d'applications web (Twitter, Delicious, Flickr, Evernote etc) que nous utilisons et de les sauvegarder dans son propre entrepôt de données; puis de pouvoir explorer ses informations, via de la recherche par facettes, d'une manière uniformisée.</dc:description>
     	<foaf:homepage rdf:resource="https://github.com/martinfilliau/catchmystream"/>
     	<rdfs:seeAlso rdf:resource="https://github.com/martinfilliau/catchmystream"/>
     	</foaf:Project>
@@ -159,6 +164,16 @@
     	<foaf:homepage rdf:resource="https://github.com/martinfilliau/Kindle-Clippings-to-RDF"/>
     	<rdfs:seeAlso rdf:resource="https://github.com/martinfilliau/Kindle-Clippings-to-RDF"/>
     	</foaf:Project>
+    </foaf:currentProject>
+    <foaf:currentProject>
+        <foaf:Project>
+        <foaf:name>Context-aware Android</foaf:name>
+        <dc:title>Context-aware Android</dc:title>
+        <dc:description xml:lang="en">Configure Android according to context informations.</dc:description>
+        <dc:description xml:lang="fr">Configuration d'Android selon des informations de contexte.</dc:description>
+        <foaf:homepage rdf:resource="https://github.com/martinfilliau/context-aware-android"/>
+        <rdfs:seeAlso rdf:resource="https://github.com/martinfilliau/context-aware-android"/>
+        </foaf:Project>
     </foaf:currentProject>
     <foaf:pastProject>
     	<foaf:Project>
