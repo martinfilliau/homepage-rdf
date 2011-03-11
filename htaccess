@@ -1,4 +1,23 @@
-AddHandler ae_xslt rdf
-Action ae_xslt /~martin/index.php
-DirectoryIndex index.php index.html
+Redirect permanent /photos http://www.flickr.com/photos/nitramf
+Redirect permanent /photo http://www.flickr.com/photos/nitramf
+Redirect permanent /portfolio http://www.flickr.com/photos/nitramf/sets/72157613501560286/
+Redirect permanent /cv_martin_filliau.pdf http://martin.filliau.com
+
+# Directive to ensure *.rdf files served as appropriate content type,
+# if not present in main apache config
+AddType application/rdf+xml .rdf
+
+# Rewrite engine setup
+RewriteEngine On
+RewriteBase /
+
+# Rewrite rule to serve RDF/XML content from the vocabulary URI
+RewriteCond %{HTTP_ACCEPT} application/rdf\+xml
+RewriteRule ^$ martinfilliau.rdf [R=303]
+
+RewriteCond %{HTTP_HOST} ^([^.]+)\.martin\.filliau\.com
+RewriteRule (.*) http://martin.filliau.com/$1 [R=301,L]
+
+Options +MultiViews
+
 

@@ -54,26 +54,26 @@
                         </ul>
                     </p>
                 </div>
-                <div class="groupbox">
-                    <h2><xsl:value-of select="$currentProjectsBoxName"/></h2>
-                	<p>
-		            <ul>
-		               <xsl:for-each select="foaf:currentProject">
-		               		<li><xsl:apply-templates select="."/></li>
-		               </xsl:for-each>
-		            </ul>
-                	</p>
-                </div>
-                <div class="groupbox">
-                    <h2><xsl:value-of select="$pastProjectsBoxName"/></h2>
-                	<p>
-		            <ul>
-		               <xsl:for-each select="foaf:pastProject">
-		               		<li><xsl:apply-templates select="."/></li>
-   		               </xsl:for-each>
-		            </ul>
-                	</p>
-                </div>
+	                <div class="groupbox">
+	                    <h2><xsl:value-of select="$currentProjectsBoxName"/></h2>
+	                	<p>
+			            <ul>
+			               <xsl:for-each select="foaf:currentProject">
+			               		<li><xsl:apply-templates select="."/></li>
+			               </xsl:for-each>
+			            </ul>
+	                	</p>
+	                </div>
+	                <div class="groupbox">
+	                    <h2><xsl:value-of select="$pastProjectsBoxName"/></h2>
+	                	<p>
+			            <ul>
+			               <xsl:for-each select="foaf:pastProject">
+			               		<li><xsl:apply-templates select="."/></li>
+	   		               </xsl:for-each>
+			            </ul>
+	                	</p>
+	                </div>
                 <div class="groupbox">
                     <h2><xsl:value-of select="$peopleIKnowBoxName"/></h2>
                 	<p>
@@ -84,6 +84,7 @@
 		            </ul>
                 	</p>
                 </div>
+                <!--
                 <div class="groupbox">
                     <h2><xsl:value-of select="$interestsBoxName"/></h2>
                 	<p>
@@ -98,12 +99,13 @@
                     <h2><xsl:value-of select="$publicationsBoxName"/></h2>
                 	<p>
 		            <ul>
-		               <xsl:for-each select="foaf:publication">	<!-- TODO -->
+		               <xsl:for-each select="foaf:publication">
 		               		<li><xsl:apply-templates select="."/></li>
    		               </xsl:for-each>
 		            </ul>
                 	</p>
                 </div>
+                -->
                 </div>
                 
                 <div id="footer">
@@ -119,16 +121,16 @@
    </xsl:template>
 
    <xsl:template match="foaf:currentProject">
-      <a href="{foaf:Project/foaf:homepage/@rdf:resource}">
+      <p><a href="{foaf:Project/foaf:homepage/@rdf:resource}">
          <xsl:value-of select="foaf:Project/foaf:name/text()"/>
-      </a>
-      <p><xsl:apply-templates select="foaf:Project/dc:description"/></p>
+      </a> &#160;<xsl:apply-templates select="foaf:Project/dc:description"/></p>
    </xsl:template>
 
+	<!-- TODO: make parent template for both project types -->
    <xsl:template match="foaf:pastProject">
-      <a href="{foaf:Project/foaf:homepage/@rdf:resource}">
+      <p><a href="{foaf:Project/foaf:homepage/@rdf:resource}">
          <xsl:value-of select="foaf:Project/foaf:name/text()"/>
-      </a>
+      </a> &#160;<xsl:apply-templates select="foaf:Project/dc:description"/></p>
    </xsl:template>
    
    <xsl:template match="foaf:publications">
@@ -145,11 +147,11 @@
    </xsl:template>	
 
 	<xsl:template match="dc:description">
-      <xsl:value-of select="//dc:description[@xml:lang=$language]"/>
+		<xsl:value-of select="self::node()[@xml:lang=$language]/text()"/>
 	</xsl:template>
 
 	<xsl:template match="dc:title">
-      <xsl:value-of select="//dc:title[@xml:lang=$language]"/>
+      <xsl:value-of select="self::node()[@xml:lang=$language]/text()"/>
 	</xsl:template>
 
    <xsl:template match="foaf:holdsAccount" mode="body">
@@ -170,6 +172,8 @@
             	<xsl:when test="$accountService = 'http://www.google.com/'">Google</xsl:when>
             	<xsl:when test="$accountService = 'http://www.runkeeper.com/'">RunKeeper</xsl:when>   
             	<xsl:when test="$accountService = 'http://posterous.com/'">Posterous</xsl:when>                                
+            	<xsl:when test="$accountService = 'http://beta.memolane.com/'">Memolane</xsl:when>                                
+            	<xsl:when test="$accountService = 'http://www.viadeo.com/'">Viadeo</xsl:when>                                
             	<xsl:otherwise>
             		<xsl:value-of select="$accountService" />
             	</xsl:otherwise>

@@ -54,9 +54,7 @@ $cached_file = $docroot.'/.cache/'.str_replace('/', '-', $http_file);
 
 */
 
-//$xslt_file = $docroot.'/foaf-as-html.xsl';
-$xslt_file = '/home/martin/public_html/foaf-as-html.xsl';
-// XSLT file -- file that contains XSLT template
+$xslt_file = 'foaf-as-html.xsl';
 
 /*
 $xml_time = filemtime($real_file);
@@ -96,19 +94,16 @@ if ($stylesheet->load($xslt_file) == false)
     die('Failed to load XSLT file');
 
 // language
-
-// default language = en
-// value defined in get ---> "dangerous"?
-
 $lang = 'en';
-if('fr' == $_GET["lang"])
-	$lang = 'fr';
+if(isset($_GET["lang"])) {
+    if('fr' == $_GET["lang"])
+	   $lang = 'fr';
+}
 
 // XSLT transformation
 $xsl = new XSLTProcessor();
 $xsl->importStyleSheet($stylesheet);
-$xsl->setParameter('http://www.w3.org/1999/XSL/Transform', 'language', $lang);	// TODO dynamic language setting
-
+$xsl->setParameter('http://www.w3.org/1999/XSL/Transform', 'language', $lang);
 $xsl->setParameter('http://www.w3.org/1999/XSL/Transform', 'profilesBoxName', 'Profils');
 $xsl->setParameter('http://www.w3.org/1999/XSL/Transform', 'currentProjectsBoxName', 'Projets');
 $xsl->setParameter('http://www.w3.org/1999/XSL/Transform', 'pastProjectsBoxName', 'Anciens projets');

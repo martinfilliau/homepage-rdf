@@ -103,12 +103,7 @@
             <foaf:accountServiceHomepage rdf:resource="http://www.twitter.com/"/>
         </foaf:OnlineAccount>
     </foaf:holdsAccount>
-    <foaf:holdsAccount>
-        <foaf:OnlineAccount rdf:about="http://www.librarything.com/catalog/nitram">
-            <foaf:accountName>nitramf</foaf:accountName>
-            <foaf:accountServiceHomepage rdf:resource="http://www.librarything.com/"/>
-        </foaf:OnlineAccount>
-    </foaf:holdsAccount>
+
     <foaf:holdsAccount>
         <foaf:OnlineAccount rdf:about="http://www.github.com/martinfilliau">
             <foaf:accountName>martinfilliau</foaf:accountName>
@@ -121,11 +116,24 @@
         </foaf:OnlineAccount>
     </foaf:holdsAccount>
     <foaf:holdsAccount>
+	<foaf:OnlineAccount rdf:about="http://www.viadeo.com/profile/martin.filliau">
+		<foaf:accountServiceHomepage rdf:resource="http://www.viadeo.com/"/>
+	</foaf:OnlineAccount>
+    </foaf:holdsAccount>
+    <foaf:holdsAccount>
     	<foaf:OnlineAccount rdf:about="http://www.google.com/profiles/martin.filliau">
     		<foaf:accountServiceHomepage rdf:resource="http://www.google.com/"/>
     	</foaf:OnlineAccount>
     </foaf:holdsAccount>
-    <foaf:holdsAccount>
+    
+        <foaf:holdsAccount>
+        <foaf:OnlineAccount rdf:about="http://www.librarything.com/catalog/nitram">
+            <foaf:accountName>nitramf</foaf:accountName>
+            <foaf:accountServiceHomepage rdf:resource="http://www.librarything.com/"/>
+        </foaf:OnlineAccount>
+    </foaf:holdsAccount>
+    
+        <foaf:holdsAccount>
     	<foaf:OnlineAccount rdf:about="http://www.runkeeper.com/user/martinfilliau">
     		<foaf:accountServiceHomepage rdf:resource="http://www.runkeeper.com/"/>
     	</foaf:OnlineAccount>
