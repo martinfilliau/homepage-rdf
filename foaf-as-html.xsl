@@ -16,6 +16,10 @@
    <xsl:param name="interestsBoxName" />
    <xsl:param name="publicationsBoxName" />
    <xsl:param name="contactLabel" />
+   <xsl:param name="cvLabel" />
+   <xsl:param name="cvUrl" />
+   <xsl:param name="openIdServer" />
+   <xsl:param name="openIdDelegate" />
 
    <xsl:variable name="fullName" select="/rdf:RDF/foaf:Person[1]/foaf:name/text()"/>
    <xsl:variable name="bio" select="/rdf:RDF/foaf:Person[1]/bio:olb/text()" />
@@ -44,16 +48,9 @@
         </div>
        	<div id="content">
                 <p><xsl:value-of select="$bio" /></p>
-                <div class="groupbox">
-                    <h2><xsl:value-of select="$profilesBoxName"/></h2>
-                    <p>
-                        <ul>
-                            <xsl:for-each select="foaf:holdsAccount">
-                            	<li><xsl:apply-templates mode="body" select="."/></li>
-                            </xsl:for-each>
-                        </ul>
-                    </p>
-                </div>
+
+                <p><a href="{$cvUrl}"><xsl:value-of select="$cvLabel"/></a></p>
+
 	                <div class="groupbox">
 	                    <h2><xsl:value-of select="$currentProjectsBoxName"/></h2>
 	                	<p>
@@ -74,6 +71,18 @@
 			            </ul>
 	                	</p>
 	                </div>
+	                
+                <div class="groupbox">
+                    <h2><xsl:value-of select="$profilesBoxName"/></h2>
+                    <p>
+                        <ul>
+                            <xsl:for-each select="foaf:holdsAccount">
+                            	<li><xsl:apply-templates mode="body" select="."/></li>
+                            </xsl:for-each>
+                        </ul>
+                    </p>
+                </div>
+	                
                 <div class="groupbox">
                     <h2><xsl:value-of select="$peopleIKnowBoxName"/></h2>
                 	<p>
@@ -160,27 +169,27 @@
         <xsl:variable name="serviceName">
         	<xsl:choose>
             	<xsl:when test="$accountService = 'http://www.facebook.com/'">Facebook</xsl:when>
-            	<xsl:when test="$accountService = 'http://www.github.com/'">Github</xsl:when>
-            	<xsl:when test="$accountService = 'http://www.twitter.com/'">Twitter</xsl:when>
-            	<xsl:when test="$accountService = 'http://www.linkedin.com/'">LinkedIn</xsl:when>
-            	<xsl:when test="$accountService = 'http://www.viadeo.com/'">Viadeo</xsl:when>
-            	<xsl:when test="$accountService = 'http://www.flickr.com/'">Flickr</xsl:when>
+            	<xsl:when test="$accountService = 'http://www.github.com/'">&lt;strong&gt;Github&lt;/strong&gt;</xsl:when>
+            	<xsl:when test="$accountService = 'http://www.twitter.com/'">&lt;strong&gt;Twitter&lt;/strong&gt;</xsl:when>
+            	<xsl:when test="$accountService = 'http://www.linkedin.com/'">&lt;strong&gt;LinkedIn&lt;/strong&gt;</xsl:when>
+            	<xsl:when test="$accountService = 'http://www.viadeo.com/'">&lt;strong&gt;Viadeo&lt;/strong&gt;</xsl:when>
+            	<xsl:when test="$accountService = 'http://www.flickr.com/'">&lt;strong&gt;Flickr&lt;/strong&gt;</xsl:when>
             	<xsl:when test="$accountService = 'http://www.diigo.com/'">Diigo</xsl:when>
             	<xsl:when test="$accountService = 'http://www.librarything.com/'">LibraryThing</xsl:when>
             	<xsl:when test="$accountService = 'http://www.last.fm/'">Last.fm</xsl:when>
-            	<xsl:when test="$accountService = 'http://www.delicious.com/'">Delicious</xsl:when>
+            	<xsl:when test="$accountService = 'http://www.delicious.com/'">&lt;strong&gt;Delicious&lt;/strong&gt;</xsl:when>
             	<xsl:when test="$accountService = 'http://www.google.com/'">Google</xsl:when>
             	<xsl:when test="$accountService = 'http://www.runkeeper.com/'">RunKeeper</xsl:when>   
             	<xsl:when test="$accountService = 'http://posterous.com/'">Posterous</xsl:when>                                
             	<xsl:when test="$accountService = 'http://beta.memolane.com/'">Memolane</xsl:when>                                
-            	<xsl:when test="$accountService = 'http://www.viadeo.com/'">Viadeo</xsl:when>                                
+            	<xsl:when test="$accountService = 'http://www.viadeo.com/'">&lt;strong&gt;Viadeo&lt;/strong&gt;</xsl:when>                                
             	<xsl:otherwise>
             		<xsl:value-of select="$accountService" />
             	</xsl:otherwise>
             </xsl:choose>
          </xsl:variable>
 
-		<a rel="me" href="{$link}"><xsl:value-of select="$serviceName" /></a>
+		<a rel="me" href="{$link}"><xsl:value-of select="$serviceName" disable-output-escaping="yes" /></a>
    </xsl:template>
 
    <xsl:template match="foaf:holdsAccount" mode="head">
