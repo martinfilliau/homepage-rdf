@@ -60,6 +60,38 @@ function prefered_language ($available_languages,$http_accept_language="auto") {
     return $bestlang;
 }
 
+// from http://stackoverflow.com/questions/1974505/php-simple-translation-approach-your-opinion
+class Translator {
+    private $lang = array();
+    private function findString($str,$lang) {
+        if (array_key_exists($str, $this->lang[$lang])) {
+            return $this->lang[$lang][$str];
+        }
+        return $str;
+    }
+    private function splitStrings($str) {
+        return explode('=',trim($str));
+    }
+    public function __($str,$lang) {
+        if (!array_key_exists($lang, $this->lang)) {
+            $filePath = 'translations/' . $lang . '.txt';
+            if (file_exists($filePath)) {
+                $strings = array_map(array($this,'splitStrings'),file($filePath));
+                foreach ($strings as $k => $v) {
+                    $this->lang[$lang][$v[0]] = $v[1];
+                }
+                return $this->findString($str, $lang);
+            }
+            else {
+                return $str;
+            }
+        }
+        else {
+            return $this->findString($str, $lang);
+        }
+    }
+}
+
 // language detection
 $lang = 'en';
 if(isset($_GET["lang"])) {
@@ -95,19 +127,21 @@ $stylesheet->substituteEntities = true;
 if ($stylesheet->load($xslt_file) == false)
     die('Failed to load XSLT file');
 
+$t = new Translator();
+
 // XSLT transformation
 $xsl = new XSLTProcessor();
 $xsl->importStyleSheet($stylesheet);
 $xsl->setParameter('http://www.w3.org/1999/XSL/Transform', 'language', $lang);
-$xsl->setParameter('http://www.w3.org/1999/XSL/Transform', 'profilesBoxName', 'Profils');
-$xsl->setParameter('http://www.w3.org/1999/XSL/Transform', 'currentProjectsBoxName', 'Projets');
-$xsl->setParameter('http://www.w3.org/1999/XSL/Transform', 'pastProjectsBoxName', 'Anciens projets');
-$xsl->setParameter('http://www.w3.org/1999/XSL/Transform', 'peopleIKnowBoxName', 'Gens');
-$xsl->setParameter('http://www.w3.org/1999/XSL/Transform', 'interestsBoxName', 'Intérêts');
-$xsl->setParameter('http://www.w3.org/1999/XSL/Transform', 'publicationsBoxName', 'Publications');
-$xsl->setParameter('http://www.w3.org/1999/XSL/Transform', 'contactLabel', 'Contact');
-$xsl->setParameter('http://www.w3.org/1999/XSL/Transform', 'cvLabel', 'CV PDF');
-$xsl->setParameter('http://www.w3.org/1999/XSL/Transform', 'cvUrl', 'cv_martin_filliau_fr.pdf');
+$xsl->setParameter('http://www.w3.org/1999/XSL/Transform', 'profilesBoxName', $t->__('profilesBoxName', $lang));
+$xsl->setParameter('http://www.w3.org/1999/XSL/Transform', 'currentProjectsBoxName', $t->__('currentProjectsBoxName', $lang));
+$xsl->setParameter('http://www.w3.org/1999/XSL/Transform', 'pastProjectsBoxName', $t->__('pastProjectsBoxName', $lang));
+$xsl->setParameter('http://www.w3.org/1999/XSL/Transform', 'peopleIKnowBoxName', $t->__('peopleIKnowBoxName', $lang));
+$xsl->setParameter('http://www.w3.org/1999/XSL/Transform', 'interestsBoxName', $t->__('interestsBoxName', $lang));
+$xsl->setParameter('http://www.w3.org/1999/XSL/Transform', 'publicationsBoxName', $t->__('publicationsBoxName', $lang));
+$xsl->setParameter('http://www.w3.org/1999/XSL/Transform', 'contactLabel', $t->__('contactLabel', $lang));
+$xsl->setParameter('http://www.w3.org/1999/XSL/Transform', 'cvLabel', $t->__('cvLabel', $lang));
+$xsl->setParameter('http://www.w3.org/1999/XSL/Transform', 'cvUrl', $t->__('cvUrl', $lang));
 
 $availableLanguages = '';
 

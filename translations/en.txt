@@ -1,0 +1,9 @@
+profilesBoxName=Profiles
+currentProjectsBoxName=Projects
+pastProjectsBoxName=Past projects
+peopleIKnowBoxName=People I know
+interestsBoxName=Interests
+publicationsBoxName=Publications
+contactLabel=Contact
+cvLabel=CV PDF
+cvUrl=cv_martin_filliau_en.pdf
