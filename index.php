@@ -69,7 +69,7 @@ if(isset($_GET["lang"])) {
     $lang = prefered_language ($available_languages);
 }
 
-// cache
+// cache per lang
 $cached_file = 'cache-' . $lang;
 
 $xml_time = filemtime($rdf_file);
@@ -79,7 +79,7 @@ $cache_time = @filemtime($cached_file);
 if (($cache_time > $xml_time) && ($cache_time > $xslt_time))
 {
     readfile($cached_file);
-    echo '<!--cached-->';
+    echo '<!--c-->';
     exit();
 }
 
