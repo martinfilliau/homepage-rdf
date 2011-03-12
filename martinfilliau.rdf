@@ -24,6 +24,7 @@
     <foaf:dateOfBirth>1988-07-07</foaf:dateOfBirth>
     <foaf:mbox rdf:resource="mailto:martin@filliau.com"/>
     <foaf:mbox_sha1sum>0d7f14f75402f34c1d70794ff87aadbbc37f0667</foaf:mbox_sha1sum>
+    <foaf:openid>http://martin.filliau.com</foaf:openid>
     <foaf:homepage>
     	<foaf:document rdf:about="http://martin.filliau.com/">
     		<dc:title xml:lang="en">Homepage of Martin Filliau</dc:title>
@@ -147,14 +148,6 @@
     <!-- projects -->    
     <foaf:currentProject>
     	<foaf:Project>
-    	<foaf:name>Makampuni</foaf:name>
-    	<dc:title>Makampuni</dc:title>
-    	<dc:description xml:lang="en">Project of collaborative platform to describe companies and actors around them. Using semantic web technologies, we could provide an open platform usable for jobs research.</dc:description>
-    	<dc:description xml:lang="fr">Projet de plateforme collaborative permettant de décrire des entreprises et les acteurs qui gravitent autour. En utilisant les technologies du web sématique, il serait possible de fournir une plateforme ouverte, utilisable par exemple pour les recherches d'emplois.</dc:description>
-    	</foaf:Project>
-    </foaf:currentProject>
-    <foaf:currentProject>
-    	<foaf:Project>
     	<foaf:name>Catchmystream</foaf:name>
     	<dc:title>Catchmystream</dc:title>
     	<dc:description xml:lang="en">Experimental project of a platform able ton consume informations that we publish in various websites (Twitter, Delicious, Flickr, Evernote etc) and backup them in a personal datastore; and then be able to explore your informations via faceted search, in an uniformized way.</dc:description>
@@ -163,7 +156,7 @@
     	<rdfs:seeAlso rdf:resource="https://github.com/martinfilliau/catchmystream"/>
     	</foaf:Project>
     </foaf:currentProject>
-    <foaf:currentProject>
+    <foaf:pastProject>
     	<foaf:Project>
     	<foaf:name>Kindle Clippings to RDF</foaf:name>
     	<dc:title>Kindle Clippings to RDF</dc:title>
@@ -172,7 +165,7 @@
     	<foaf:homepage rdf:resource="https://github.com/martinfilliau/Kindle-Clippings-to-RDF"/>
     	<rdfs:seeAlso rdf:resource="https://github.com/martinfilliau/Kindle-Clippings-to-RDF"/>
     	</foaf:Project>
-    </foaf:currentProject>
+    </foaf:pastProject>
     <foaf:currentProject>
         <foaf:Project>
         <foaf:name>Context-aware Android</foaf:name>
@@ -192,6 +185,14 @@
         <foaf:homepage rdf:resource="https://github.com/martinfilliau/homepage-rdf"/>
         <rdfs:seeAlso rdf:resource="https://github.com/martinfilliau/homepage-rdf"/>
         </foaf:Project>
+    </foaf:currentProject>
+    <foaf:currentProject>
+    	<foaf:Project>
+    	<foaf:name>Makampuni</foaf:name>
+    	<dc:title>Makampuni</dc:title>
+    	<dc:description xml:lang="en">Project of collaborative platform to describe companies and actors around them. Using semantic web technologies, we could provide an open platform usable for jobs research.</dc:description>
+    	<dc:description xml:lang="fr">Projet de plateforme collaborative permettant de décrire des entreprises et les acteurs qui gravitent autour. En utilisant les technologies du web sématique, il serait possible de fournir une plateforme ouverte, utilisable par exemple pour les recherches d'emplois.</dc:description>
+    	</foaf:Project>
     </foaf:currentProject>
     <foaf:pastProject>
     	<foaf:Project>
