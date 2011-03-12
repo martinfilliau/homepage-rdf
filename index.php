@@ -8,7 +8,8 @@ $available_languages = array(
         'en',
         'fr',
 );
-$translationsFolderPath = 'translations/';
+$openIdServer = 'https://www.myopenid.com/server';
+$openIdDelegate = 'http://martinfilliau.myopenid.com';
 
 /*
   determine which language out of an available set the user prefers most
@@ -75,7 +76,7 @@ class Translator {
     }
     public function __($str,$lang) {
         if (!array_key_exists($lang, $this->lang)) {
-            $filePath = $translationsFolderPath . $lang . '.txt';
+            $filePath = 'translations/' . $lang . '.txt';
             if (file_exists($filePath)) {
                 $strings = array_map(array($this,'splitStrings'),file($filePath));
                 foreach ($strings as $k => $v) {
@@ -143,6 +144,8 @@ $xsl->setParameter('http://www.w3.org/1999/XSL/Transform', 'publicationsBoxName'
 $xsl->setParameter('http://www.w3.org/1999/XSL/Transform', 'contactLabel', $t->__('contactLabel', $lang));
 $xsl->setParameter('http://www.w3.org/1999/XSL/Transform', 'cvLabel', $t->__('cvLabel', $lang));
 $xsl->setParameter('http://www.w3.org/1999/XSL/Transform', 'cvUrl', $t->__('cvUrl', $lang));
+$xsl->setParameter('http://www.w3.org/1999/XSL/Transform', 'openIdServer', $openIdServer);
+$xsl->setParameter('http://www.w3.org/1999/XSL/Transform', 'openIdDelegate', $openIdDelegate);
 
 $availableLanguages = '';
 

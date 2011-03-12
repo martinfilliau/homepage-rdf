@@ -32,8 +32,8 @@
             <title><xsl:value-of select="$fullName"/></title>
 			<link rel="stylesheet" type="text/css" href="mf.css" media="screen" />
             <link rel="meta" type="application/rdf+xml" title="FOAF" href="martinfilliau.rdf"/>
-            <link rel="openid.server" href="https://www.myopenid.com/server" />
-			<link rel="openid.delegate" href="http://martinfilliau.myopenid.com" />
+            <link rel="openid.server" href="{$openIdServer}" />
+			<link rel="openid.delegate" href="{$openIdDelegate}" />
             <xsl:for-each select="/rdf:RDF/foaf:Person[1]/foaf:holdsAccount">
             	<xsl:apply-templates mode="head" select="."/>
             </xsl:for-each>
