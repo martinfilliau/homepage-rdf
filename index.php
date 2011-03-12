@@ -8,6 +8,7 @@ $available_languages = array(
         'en',
         'fr',
 );
+$translationsFolderPath = 'translations/';
 
 /*
   determine which language out of an available set the user prefers most
@@ -74,7 +75,7 @@ class Translator {
     }
     public function __($str,$lang) {
         if (!array_key_exists($lang, $this->lang)) {
-            $filePath = 'translations/' . $lang . '.txt';
+            $filePath = $translationsFolderPath . $lang . '.txt';
             if (file_exists($filePath)) {
                 $strings = array_map(array($this,'splitStrings'),file($filePath));
                 foreach ($strings as $k => $v) {
