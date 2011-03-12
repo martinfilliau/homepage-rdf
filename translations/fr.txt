@@ -5,5 +5,5 @@ peopleIKnowBoxName=Connaissances
 interestsBoxName=Intérêts
 publicationsBoxName=Publications
 contactLabel=Contact
-cvLabel=CV PDF
+cvLabel=CV (PDF)
 cvUrl=cv_martin_filliau_fr.pdf
