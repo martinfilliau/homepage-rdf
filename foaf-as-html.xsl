@@ -24,7 +24,7 @@
 
    <xsl:variable name="fullName" select="/rdf:RDF/foaf:Person[1]/foaf:name/text()"/>
    <xsl:variable name="bio" select="/rdf:RDF/foaf:Person[1]/bio:olb/text()" />
-   <xsl:variable name="email" select="/rdf:RDF/foaf:Person[1]/foaf:mbox/text()"/>
+   <xsl:variable name="email" select="/rdf:RDF/foaf:Person[1]/foaf:mbox/@rdf:resource"/>
 
    <xsl:template match="/">
         <html>
@@ -45,14 +45,12 @@
    <xsl:template match="foaf:Person">
 	<div id="global">
     	<div id="haut">
+            <ul id="languages">
+                <xsl:call-template name="output-tokens">
+                        <xsl:with-param name="list" select="$availableLanguages" /> 
+                </xsl:call-template>
+            </ul>
                 <h1><xsl:value-of select="foaf:name" /></h1>
-        </div>
-        <div>
-        <ul>
-            <xsl:call-template name="output-tokens">
-                    <xsl:with-param name="list" select="$availableLanguages" /> 
-            </xsl:call-template>
-        </ul>
         </div>
        	<div id="content">
                 <p><xsl:value-of select="$bio" disable-output-escaping="yes" /></p>
@@ -83,7 +81,7 @@
                 <div class="groupbox">
                     <h2><xsl:value-of select="$profilesBoxName"/></h2>
                     <p>
-                        <ul>
+                        <ul id="profiles">
                             <xsl:for-each select="foaf:holdsAccount">
                             	<li><xsl:apply-templates mode="body" select="."/></li>
                             </xsl:for-each>
@@ -126,7 +124,7 @@
                 </div>
                 
                 <div id="footer">
-	   				<p><strong><xsl:value-of select="$contactLabel"/>: </strong><xsl:value-of select="$email" /></p>
+	   				<p><strong><xsl:value-of select="$contactLabel"/>: </strong><a href="{$email}"><xsl:value-of select="$email" /></a></p>
 				</div>
                 </div>
    </xsl:template>
@@ -201,7 +199,7 @@
    </xsl:template>
 
    <xsl:template match="foaf:holdsAccount" mode="head">
-      <link rel="me" type="text/html" href="{foaf:OnlineAccount/foaf:accountServiceHomepage/foaf:Document/foaf:homepage/@rdf:resource}"/>
+      <link rel="me" type="text/html" href="{./foaf:OnlineAccount/@rdf:about}"/>
    </xsl:template>
    
    <!-- from http://stackoverflow.com/questions/136500/does-xslt-have-a-split-function -->

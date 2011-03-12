@@ -6,10 +6,24 @@ html, body {
 
 div#global {
     min-height: 100%;
-	width: 750px;
+	width: 65%;
 	padding: 0 10px;
 	margin: 0 auto;
 	position: relative;
+}
+
+#languages {
+    float: right;
+}
+
+#languages li {
+    display: inline;
+    padding: 0.5em;
+}
+
+#profiles li {
+    display: inline;
+    padding: 0.5em;
 }
 
 .groupbox { 
