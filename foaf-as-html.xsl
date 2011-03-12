@@ -209,7 +209,7 @@
         <xsl:variable name="newlist" select="concat(normalize-space($list), ' ')" /> 
         <xsl:variable name="first" select="substring-before($newlist, ' ')" /> 
         <xsl:variable name="remaining" select="substring-after($newlist, ' ')" /> 
-            <li><a href="?lang={$first}"><xsl:value-of select="$first" /></a></li>
+            <li><a href="index.html.{$first}"><xsl:value-of select="$first" /></a></li>
         <xsl:if test="$remaining">
             <xsl:call-template name="output-tokens">
                     <xsl:with-param name="list" select="$remaining" /> 
