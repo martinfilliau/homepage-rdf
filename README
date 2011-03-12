@@ -1,7 +1,12 @@
 homepage-rdf
 =============
+
 Display informations from your FOAF profile.
-It uses XSL and a PHP script to render as HTML.
+It uses XSLT and a PHP script to render as HTML.
+
+Functionnalities:
+* Caching
+* Internationalization
 
 Inspired from: http://deletethis.net/dave/?uri=http%3A%2F%2Fcerealnumber.livejournal.com%2F17346.html
 
