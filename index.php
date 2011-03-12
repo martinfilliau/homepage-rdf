@@ -146,6 +146,7 @@ $xsl->setParameter('http://www.w3.org/1999/XSL/Transform', 'cvLabel', $t->__('cv
 $xsl->setParameter('http://www.w3.org/1999/XSL/Transform', 'cvUrl', $t->__('cvUrl', $lang));
 $xsl->setParameter('http://www.w3.org/1999/XSL/Transform', 'openIdServer', $openIdServer);
 $xsl->setParameter('http://www.w3.org/1999/XSL/Transform', 'openIdDelegate', $openIdDelegate);
+$xsl->setParameter('http://www.w3.org/1999/XSL/Transform', 'foafPath', $rdf_file);
 
 $availableLanguages = '';
 

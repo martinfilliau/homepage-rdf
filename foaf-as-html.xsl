@@ -21,6 +21,7 @@
    <xsl:param name="openIdServer" />
    <xsl:param name="openIdDelegate" />
    <xsl:param name="availableLanguages" />
+   <xsl:param name="foafPath" />
 
    <xsl:variable name="fullName" select="/rdf:RDF/foaf:Person[1]/foaf:name/text()"/>
    <xsl:variable name="bio" select="/rdf:RDF/foaf:Person[1]/bio:olb/text()" />
@@ -31,7 +32,7 @@
          <head profile="http://gmpg.org/xfn/11">
             <title><xsl:value-of select="$fullName"/></title>
 			<link rel="stylesheet" type="text/css" href="mf.css" media="screen" />
-            <link rel="meta" type="application/rdf+xml" title="FOAF" href="martinfilliau.rdf"/>
+            <link rel="meta" type="application/rdf+xml" title="FOAF" href="{$foafPath}"/>
             <link rel="openid.server" href="{$openIdServer}" />
 			<link rel="openid.delegate" href="{$openIdDelegate}" />
             <xsl:for-each select="/rdf:RDF/foaf:Person[1]/foaf:holdsAccount">
