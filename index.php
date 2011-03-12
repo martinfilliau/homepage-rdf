@@ -79,25 +79,21 @@ $cache_time = @filemtime($cached_file);
 if (($cache_time > $xml_time) && ($cache_time > $xslt_time))
 {
     readfile($cached_file);
-    echo '<!--c-->';
+    echo '<!--c-->';        // returning cache content if nothing has been modified
     exit();
 }
 
-
 $source_xml = file_get_contents($rdf_file);
 
-// creating&loading DOMDocument
 $xml = new DOMDocument;
 $xml->substituteEntities = true;
-if ($xml->loadXML($source_xml) == false) // loadXML will fail
-    die('Failed to load source XML: '.$http_file); // if document is not valid XML
+if ($xml->loadXML($source_xml) == false)
+    die('Failed to load RDF file');
 
-// Loading XSLT site
 $stylesheet = new DOMDocument;
 $stylesheet->substituteEntities = true;
 if ($stylesheet->load($xslt_file) == false)
     die('Failed to load XSLT file');
-
 
 // XSLT transformation
 $xsl = new XSLTProcessor();
@@ -113,24 +109,15 @@ $xsl->setParameter('http://www.w3.org/1999/XSL/Transform', 'contactLabel', 'Cont
 $xsl->setParameter('http://www.w3.org/1999/XSL/Transform', 'cvLabel', 'CV PDF');
 $xsl->setParameter('http://www.w3.org/1999/XSL/Transform', 'cvUrl', 'cv_martin_filliau_fr.pdf');
 
+$availableLanguages = '';
+
+foreach ($available_languages as &$value) {
+    $availableLanguages .= $value . ' ';
+}
+
+$xsl->setParameter('http://www.w3.org/1999/XSL/Transform', 'availableLanguages', $availableLanguages);
+
 $output = $xsl->transformToXML($xml); // transforming
-
-/*
-// htmlizing XML
-$output = ltrim(substr($output, strpos($output, '?'.'>')+2));
-// removing <?xml
-$output = preg_replace("!<(div|iframe|script|textarea)([^>]*?)/>!s",
-"<$1$2></$1>", $output);
-// some browsers does not support empty div, iframe, script and textarea tags
-$output = preg_replace("!<(meta)([^>]*?)/>!s", "<$1$2 />", $output);
-// meta tag should have extra space before />
-$output = preg_replace("!&#(9|10|13);!s", '', $output);
-// nobody needs 9, 10, 13 chars
-$output = str_replace(chr(0xc2).chr(0x97), '&mdash;', $output);
-$output = str_replace(chr(0xc2).chr(0xa0), '&nbsp;', $output);
-// lets substitute some UTF8 chars to HTML entities
-
-*/
 
 echo $output;
 

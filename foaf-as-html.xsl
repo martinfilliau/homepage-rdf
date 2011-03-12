@@ -8,7 +8,7 @@
       			xmlns:dc="http://purl.org/dc/elements/1.1/">
    <xsl:output method="html" media-type="text/html"/>
    
-   <xsl:param name="language" />	<!-- en OR fr -->
+   <xsl:param name="language" />
    <xsl:param name="profilesBoxName" />
    <xsl:param name="currentProjectsBoxName" />
    <xsl:param name="pastProjectsBoxName" />
@@ -20,6 +20,7 @@
    <xsl:param name="cvUrl" />
    <xsl:param name="openIdServer" />
    <xsl:param name="openIdDelegate" />
+   <xsl:param name="availableLanguages" />
 
    <xsl:variable name="fullName" select="/rdf:RDF/foaf:Person[1]/foaf:name/text()"/>
    <xsl:variable name="bio" select="/rdf:RDF/foaf:Person[1]/bio:olb/text()" />
@@ -46,8 +47,15 @@
     	<div id="haut">
                 <h1><xsl:value-of select="foaf:name" /></h1>
         </div>
+        <div>
+        <ul>
+            <xsl:call-template name="output-tokens">
+                    <xsl:with-param name="list" select="$availableLanguages" /> 
+            </xsl:call-template>
+        </ul>
+        </div>
        	<div id="content">
-                <p><xsl:value-of select="$bio" /></p>
+                <p><xsl:value-of select="$bio" disable-output-escaping="yes" /></p>
 
                 <p><a href="{$cvUrl}"><xsl:value-of select="$cvLabel"/></a></p>
 
@@ -195,5 +203,19 @@
    <xsl:template match="foaf:holdsAccount" mode="head">
       <link rel="me" type="text/html" href="{foaf:OnlineAccount/foaf:accountServiceHomepage/foaf:Document/foaf:homepage/@rdf:resource}"/>
    </xsl:template>
+   
+   <!-- from http://stackoverflow.com/questions/136500/does-xslt-have-a-split-function -->
+   <xsl:template name="output-tokens">
+       <xsl:param name="list" /> 
+        <xsl:variable name="newlist" select="concat(normalize-space($list), ' ')" /> 
+        <xsl:variable name="first" select="substring-before($newlist, ' ')" /> 
+        <xsl:variable name="remaining" select="substring-after($newlist, ' ')" /> 
+            <li><a href="?lang={$first}"><xsl:value-of select="$first" /></a></li>
+        <xsl:if test="$remaining">
+            <xsl:call-template name="output-tokens">
+                    <xsl:with-param name="list" select="$remaining" /> 
+            </xsl:call-template>
+        </xsl:if>
+    </xsl:template>
 
 </xsl:stylesheet>
