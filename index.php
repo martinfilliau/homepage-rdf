@@ -69,25 +69,20 @@ if(isset($_GET["lang"])) {
     $lang = prefered_language ($available_languages);
 }
 
-/*
+// cache
+$cached_file = 'cache-' . $lang;
 
-
-$cached_file = $docroot.'/.cache/'.str_replace('/', '-', $http_file);
-
-$xml_time = filemtime($real_file);
+$xml_time = filemtime($rdf_file);
 $xslt_time = filemtime($xslt_file);
 $cache_time = @filemtime($cached_file);
-// Modification times of source XML file,
-// XSLT file and cached file
 
 if (($cache_time > $xml_time) && ($cache_time > $xslt_time))
 {
-    // than we can output cached file and stop
     readfile($cached_file);
     echo '<!--cached-->';
     exit();
 }
-*/
+
 
 $source_xml = file_get_contents($rdf_file);
 
@@ -139,9 +134,7 @@ $output = str_replace(chr(0xc2).chr(0xa0), '&nbsp;', $output);
 
 echo $output;
 
-// Finally! Outputting HTML to browser
-
 // caching (save processed version and display it next time)
-//@file_put_contents($cached_file, $output);
-?>
+@file_put_contents($cached_file, $output);
 
+?>
