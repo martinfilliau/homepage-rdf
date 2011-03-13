@@ -81,11 +81,9 @@
                 <div class="groupbox">
                     <h2><xsl:value-of select="$profilesBoxName"/></h2>
                     <p>
-                        <ul id="profiles">
                             <xsl:for-each select="foaf:holdsAccount">
-                            	<li><xsl:apply-templates mode="body" select="."/></li>
+                                <xsl:apply-templates mode="body" select="." />&#160;
                             </xsl:for-each>
-                        </ul>
                     </p>
                 </div>
 	                
