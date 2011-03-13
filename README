@@ -8,5 +8,17 @@ Functionnalities:
 * Caching
 * Internationalization
 
+Configuration: at the beginning of index.php:
+$xslt_file = 'foaf-as-html.xsl';
+$rdf_file = 'martinfilliau.rdf';
+$available_languages = array(
+        'en',
+        'fr',
+);
+$openIdServer = '';
+$openIdDelegate = '';
+
+Please note: this is provided as-is, without any warranty.
+
 Inspired from: http://deletethis.net/dave/?uri=http%3A%2F%2Fcerealnumber.livejournal.com%2F17346.html
 
