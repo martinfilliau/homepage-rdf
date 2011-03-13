@@ -24,7 +24,6 @@
    <xsl:param name="foafPath" />
 
    <xsl:variable name="fullName" select="/rdf:RDF/foaf:Person[1]/foaf:name/text()"/>
-   <xsl:variable name="bio" select="/rdf:RDF/foaf:Person[1]/bio:olb/text()" />
    <xsl:variable name="email" select="/rdf:RDF/foaf:Person[1]/foaf:mbox/@rdf:resource"/>
 
    <xsl:template match="/">
@@ -54,7 +53,7 @@
                 <h1><xsl:value-of select="foaf:name" /></h1>
         </div>
        	<div id="content">
-                <p><xsl:value-of select="$bio" disable-output-escaping="yes" /></p>
+       	        <div><xsl:apply-templates select="bio:biography"/></div>
 
                 <p><a href="{$cvUrl}"><xsl:value-of select="$cvLabel"/></a></p>
 
@@ -123,7 +122,6 @@
                 </div>
                 -->
                 </div>
-                
                 <div id="footer">
 	   				<p><strong><xsl:value-of select="$contactLabel"/>: </strong><a href="{$email}"><xsl:value-of select="$email" /></a></p>
 				</div>
@@ -162,12 +160,18 @@
       </a>
    </xsl:template>	
 
+<!-- TODO refactor -->
+
 	<xsl:template match="dc:description">
 		<xsl:value-of select="self::node()[@xml:lang=$language]/text()"/>
 	</xsl:template>
 
 	<xsl:template match="dc:title">
       <xsl:value-of select="self::node()[@xml:lang=$language]/text()"/>
+	</xsl:template>
+	
+	<xsl:template match="bio:biography">
+      <xsl:value-of select="self::node()[@xml:lang=$language]" disable-output-escaping="yes" />
 	</xsl:template>
 
    <xsl:template match="foaf:holdsAccount" mode="body">
