@@ -6,7 +6,7 @@
                 xmlns:foaf="http://xmlns.com/foaf/0.1/"
       			xmlns:bio="http://purl.org/vocab/bio/0.1/"
       			xmlns:dc="http://purl.org/dc/elements/1.1/">
-   <xsl:output method="html" media-type="text/html"/>
+   <xsl:output method="xml" media-type="text/html" omit-xml-declaration="yes" doctype-public="-//W3C//DTD XHTML 1.0 Transitional//EN" doctype-system="http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd"/>
    
    <xsl:param name="language" />
    <xsl:param name="profilesBoxName" />
@@ -59,23 +59,19 @@
 
 	                <div class="groupbox">
 	                    <h2><xsl:value-of select="$currentProjectsBoxName"/></h2>
-	                	<p>
 			            <ul>
 			               <xsl:for-each select="foaf:currentProject">
 			               		<li><xsl:apply-templates select="."/></li>
 			               </xsl:for-each>
 			            </ul>
-	                	</p>
 	                </div>
 	                <div class="groupbox">
 	                    <h2><xsl:value-of select="$pastProjectsBoxName"/></h2>
-	                	<p>
 			            <ul>
 			               <xsl:for-each select="foaf:pastProject">
 			               		<li><xsl:apply-templates select="."/></li>
 	   		               </xsl:for-each>
 			            </ul>
-	                	</p>
 	                </div>
 	                
                 <div class="groupbox">
@@ -89,13 +85,11 @@
 	                
                 <div class="groupbox">
                     <h2><xsl:value-of select="$peopleIKnowBoxName"/></h2>
-                	<p>
 		            <ul>
 		               <xsl:for-each select="foaf:knows">
 		               		<li><xsl:apply-templates select="."/></li>
    		               </xsl:for-each>
 		            </ul>
-                	</p>
                 </div>
                 <!--
                 <div class="groupbox">
