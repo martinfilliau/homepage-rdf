@@ -100,18 +100,6 @@
         </foaf:OnlineAccount>
     </foaf:holdsAccount>
     <foaf:holdsAccount>
-        <foaf:OnlineAccount rdf:about="http://www.lastfm.fr/user/nitramf">
-            <foaf:accountName>nitramf</foaf:accountName>
-            <foaf:accountServiceHomepage rdf:resource="http://www.last.fm/"/>
-        </foaf:OnlineAccount>
-    </foaf:holdsAccount>
-    <foaf:holdsAccount>
-        <foaf:OnlineAccount rdf:about="http://www.diigo.com/~martinfilliau">
-            <foaf:accountName>martinfilliau</foaf:accountName>
-            <foaf:accountServiceHomepage rdf:resource="http://www.diigo.com/"/>
-        </foaf:OnlineAccount>
-    </foaf:holdsAccount>
-    <foaf:holdsAccount>
         <foaf:OnlineAccount rdf:about="http://twitter.com/martinfilliau">
             <foaf:accountName>martinfilliau</foaf:accountName>
             <foaf:accountServiceHomepage rdf:resource="http://www.twitter.com/"/>
@@ -136,6 +124,20 @@
             <foaf:accountServiceHomepage rdf:resource="http://www.librarything.com/"/>
         </foaf:OnlineAccount>
     </foaf:holdsAccount>
+    
+    <foaf:holdsAccount>
+        <foaf:OnlineAccount rdf:about="http://www.lastfm.fr/user/nitramf">
+            <foaf:accountName>nitramf</foaf:accountName>
+            <foaf:accountServiceHomepage rdf:resource="http://www.last.fm/"/>
+        </foaf:OnlineAccount>
+    </foaf:holdsAccount>
+    <foaf:holdsAccount>
+        <foaf:OnlineAccount rdf:about="http://www.diigo.com/~martinfilliau">
+            <foaf:accountName>martinfilliau</foaf:accountName>
+            <foaf:accountServiceHomepage rdf:resource="http://www.diigo.com/"/>
+        </foaf:OnlineAccount>
+    </foaf:holdsAccount>
+
     <!--
         <foaf:holdsAccount>
     	<foaf:OnlineAccount rdf:about="http://www.runkeeper.com/user/martinfilliau">
