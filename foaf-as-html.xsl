@@ -82,7 +82,8 @@
                             </xsl:for-each>
                     </p>
                 </div>
-	                
+                <br />
+                <!--	                
                 <div class="groupbox">
                     <h2><xsl:value-of select="$peopleIKnowBoxName"/></h2>
 		            <ul>
@@ -91,7 +92,6 @@
    		               </xsl:for-each>
 		            </ul>
                 </div>
-                <!--
                 <div class="groupbox">
                     <h2><xsl:value-of select="$interestsBoxName"/></h2>
                 	<p>
