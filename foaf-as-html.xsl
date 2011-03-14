@@ -186,6 +186,7 @@
             	<xsl:when test="$accountService = 'http://posterous.com/'">Posterous</xsl:when>                                
             	<xsl:when test="$accountService = 'http://beta.memolane.com/'">Memolane</xsl:when>                                
             	<xsl:when test="$accountService = 'http://www.viadeo.com/'">&lt;strong&gt;Viadeo&lt;/strong&gt;</xsl:when>                                
+            	<xsl:when test="$accountService = 'http://www.quora.com/'">Quora</xsl:when>                                
             	<xsl:otherwise>
             		<xsl:value-of select="$accountService" />
             	</xsl:otherwise>
