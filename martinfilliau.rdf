@@ -137,7 +137,12 @@
             <foaf:accountServiceHomepage rdf:resource="http://www.diigo.com/"/>
         </foaf:OnlineAccount>
     </foaf:holdsAccount>
-
+    <foaf:holdsAccount>
+        <foaf:OnlineAccount rdf:about="http://www.quora.com/Martin-Filliau">
+            <foaf:accountName>Martin-Filliau</foaf:accountName>
+            <foaf:accountServiceHomepage rdf:resource="http://www.quora.com/"/>
+        </foaf:OnlineAccount>
+    </foaf:holdsAccount>
     <!--
         <foaf:holdsAccount>
     	<foaf:OnlineAccount rdf:about="http://www.runkeeper.com/user/martinfilliau">
