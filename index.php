@@ -15,11 +15,13 @@ $openIdDelegate = 'http://martinfilliau.myopenid.com';
   determine which language out of an available set the user prefers most
  from: http://www.php.net/manual/en/function.http-negotiate-language.php
   $available_languages        array with language-tag-strings (must be lowercase) that are available
-  $http_accept_language    a HTTP_ACCEPT_LANGUAGE string (read from $_SERVER['HTTP_ACCEPT_LANGUAGE'] if left out)
 */
-function prefered_language ($available_languages,$http_accept_language="auto") {
-    // if $http_accept_language was left out, read it from the HTTP-Header
-    if ($http_accept_language == "auto") $http_accept_language = $_SERVER['HTTP_ACCEPT_LANGUAGE'];
+function prefered_language ($available_languages) {
+    if(!isset($_SERVER['HTTP_ACCEPT_LANGUAGE'])){
+        return $available_languages[0];     // by default
+    }
+    
+    $http_accept_language = $_SERVER['HTTP_ACCEPT_LANGUAGE'];
 
     // standard  for HTTP_ACCEPT_LANGUAGE is defined under
     // http://www.w3.org/Protocols/rfc2616/rfc2616-sec14.html#sec14.4
