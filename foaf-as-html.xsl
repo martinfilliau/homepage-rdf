@@ -25,15 +25,18 @@
 
    <xsl:variable name="fullName" select="/rdf:RDF/foaf:Person[1]/foaf:name/text()"/>
    <xsl:variable name="email" select="/rdf:RDF/foaf:Person[1]/foaf:mbox/@rdf:resource"/>
+    <xsl:variable name="description" select="/rdf:RDF/foaf:Person[1]/bio:olb[@xml:lang=$language]/text()"/>
 
    <xsl:template match="/">
         <html>
          <head profile="http://gmpg.org/xfn/11">
             <title><xsl:value-of select="$fullName"/></title>
+            <meta name="language" content="{$language}" />
 			<link rel="stylesheet" type="text/css" href="mf.css" media="screen" />
             <link rel="meta" type="application/rdf+xml" title="FOAF" href="{$foafPath}"/>
             <link rel="openid.server" href="{$openIdServer}" />
 			<link rel="openid.delegate" href="{$openIdDelegate}" />
+			<meta name="description" content="{$description}" />
             <xsl:for-each select="/rdf:RDF/foaf:Person[1]/foaf:holdsAccount">
             	<xsl:apply-templates mode="head" select="."/>
             </xsl:for-each>
