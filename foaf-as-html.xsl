@@ -117,6 +117,7 @@
                 <div id="footer">
 	   				<p><strong><xsl:value-of select="$contactLabel"/>: </strong><a href="{$email}"><xsl:value-of select="$email" /></a></p>
 				</div>
+				<br />
                 </div>
    </xsl:template>
 
