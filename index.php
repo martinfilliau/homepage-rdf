@@ -106,6 +106,13 @@ if(isset($_GET["lang"])) {
     // we should redirect to the correct URL ( .en or .fr for example)
     header('HTTP/1.1 303 See Other');
     header('Location: http://martin.filliau.com/index.html.' . $lang);
+    echo '<!DOCTYPE HTML PUBLIC "-//IETF//DTD HTML 2.0//EN">
+<html><head>
+<title>303 See Other</title>
+</head><body>
+<h1>See Other</h1>
+<p>The answer to your request is located <a href="http://martin.filliau.com/index.html.' . $lang . '">here</a>.</p>
+</body></html>';
     exit();
 }
 
