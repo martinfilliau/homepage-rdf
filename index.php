@@ -109,6 +109,8 @@ if(isset($_GET["lang"])) {
     exit();
 }
 
+header('Content-Language: ' . $lang);
+
 // cache per lang
 $cached_file = 'cache-' . $lang;
 
