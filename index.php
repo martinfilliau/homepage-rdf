@@ -103,6 +103,10 @@ if(isset($_GET["lang"])) {
 	   $lang = 'fr';
 } else {
     $lang = prefered_language ($available_languages);
+    // we should redirect to the correct URL ( .en or .fr for example)
+    header('HTTP/1.1 303 See Other');
+    header('Location: http://martin.filliau.com/index.html.' . $lang);
+    exit();
 }
 
 // cache per lang
