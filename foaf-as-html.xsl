@@ -76,7 +76,18 @@
 	   		               </xsl:for-each>
 			            </ul>
 	                </div>
-	                
+	           <br />     
+	           <div class="groupbox">
+                    <h2><xsl:value-of select="$publicationsBoxName"/></h2>
+                	<p>
+		            <ul>
+		               <xsl:for-each select="foaf:publication">
+		               		<li><xsl:apply-templates select="."/></li>
+   		               </xsl:for-each>
+		            </ul>
+                	</p>
+                </div>
+                <br />
                 <div class="groupbox">
                     <h2><xsl:value-of select="$profilesBoxName"/></h2>
                     <p>
@@ -105,17 +116,8 @@
 		            </ul>
                 	</p>
                 </div>
-                <div class="groupbox">
-                    <h2><xsl:value-of select="$publicationsBoxName"/></h2>
-                	<p>
-		            <ul>
-		               <xsl:for-each select="foaf:publication">
-		               		<li><xsl:apply-templates select="."/></li>
-   		               </xsl:for-each>
-		            </ul>
-                	</p>
-                </div>
                 -->
+                
                 </div>
                 <div id="footer">
 	   				<p><strong><xsl:value-of select="$contactLabel"/>: </strong><a href="{$email}"><xsl:value-of select="$email" /></a></p>
@@ -143,11 +145,10 @@
       </a> &#160;<xsl:apply-templates select="foaf:Project/dc:description"/></p>
    </xsl:template>
    
-   <xsl:template match="foaf:publications">
-      <a href="{foaf:publications/@rdf:resource}">
-         <xsl:value-of select="foaf:publications/dc:title/text()"/>
-      </a>
-      <p><xsl:apply-templates select="foaf:publications/dc:description"/></p>   		
+   <xsl:template match="foaf:publication">
+      <p><a href="{foaf:homepage/@rdf:resource}">
+         <xsl:value-of select="dc:title/text()"/>
+      </a> &#160;<xsl:apply-templates select="dc:description"/></p>   		
    </xsl:template>
 
    <xsl:template match="foaf:interest">

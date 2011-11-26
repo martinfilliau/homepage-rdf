@@ -44,15 +44,15 @@
     <foaf:interest rdf:resource="http://dbpedia.org/resource/Data_visualization" dc:title="Data Visualization"/>
     <foaf:interest rdf:resource="http://dbpedia.org/resource/Folksonomy" dc:title="Folksonomy"/>
     <foaf:interest rdf:resource="http://dbpedia.org/resource/Marketing" dc:title="Marketing"/>
-    <bio:olb xml:lang="en">Martin Filliau, student in information technology.</bio:olb>
-    <bio:olb xml:lang="fr">Martin Filliau, &#233;tudiant en technologies de l'information.</bio:olb>
+    <bio:olb xml:lang="en">Martin Filliau, web developer.</bio:olb>
+    <bio:olb xml:lang="fr">Martin Filliau, d&#233;veloppeur web.</bio:olb>
     
-    <bio:biography xml:lang="en">&lt;p&gt;&lt;strong&gt;Student in Information Technology&lt;/strong&gt;, currently in MSc Computer Science at &lt;a href=&quot;http://www.brookes.ac.uk&quot;&gt;Oxford Brookes University&lt;/a&gt; (UK), in an exchange program with &lt;a href=&quot;http://www.supinfo.com&quot;&gt;SUPINFO&lt;/a&gt; (France). MSc Dissertation is about creating a "Semantic mashup to query localised data".&lt;/p&gt;
+    <bio:biography xml:lang="en">&lt;p&gt;&lt;strong&gt;Web developer&lt;/strong&gt; at &lt;a href=&quot;http://ox.ac.uk&quot;&gt;University of Oxford&lt;/a&gt;, currently working on Mobile Oxford.&lt;/p&gt;
     &lt;p&gt;Having a software engineering background, I am interested by the &quot;&lt;strong&gt;Science of data&lt;/strong&gt;&quot; (Semantic Web, Knowledge Management, Information Retrieval, Data visualisation, localised search, crisis / emergency mapping...) and &lt;strong&gt;pervasive applications&lt;/strong&gt; (Smart cities, Web of Things, Urban computing...). I am also interested by communication and marketing.&lt;/p&gt;
 &lt;p&gt;Graduating in September 2011, I’m willing to move for the right full-time opportunity, beginning in October 2011.&lt;/p&gt;
 </bio:biography>
 
-    <bio:biography xml:lang="fr">&lt;p&gt;&lt;strong&gt;Etudiant en technologies de l'information&lt;/strong&gt;, actuellement en Master &quot;Computer Science&quot; &#224; &lt;a href=&quot;http://www.brookes.ac.uk&quot;&gt;Oxford Brookes University&lt;/a&gt; (Royaume-Uni), en &#233;change avec &lt;a href=&quot;http://www.supinfo.com&quot;&gt;SUPINFO&lt;/a&gt; (France). La dissertation de Master porte sur la cr&#233;ation d'un &quot;Semantic mashup to query localised data&quot;.&lt;/p&gt;
+    <bio:biography xml:lang="fr">&lt;p&gt;&lt;strong&gt;D&#233;veloppeur web&lt;/strong&gt; &#224; &lt;a href=&quot;http://ox.ac.uk&quot;&gt;University of Oxford&lt;/a&gt;, travaillant actuellement sur Mobile Oxford.&lt;/p&gt;
     &lt;p&gt;Ayant une formation en g&#233;nie logiciel, je suis int&#233;ress&#233; par la &quot;science des donn&#233;es&quot; (web s&#233;matique, gestion de l’information, visualisation de l'information, recherche localis&#233;e, cartographie de crise...) et les applications pervasives (web of things, villes &quot;intelligentes&quot;, urban computing...). Je suis aussi int&#233;ress&#233; par le marketing.&lt;/p&gt;
 &lt;p&gt;Dipl&#244;m&#233; en septembre 2011, je suis &#224; la recherche d’un emploi stimulant, &#224; partir d'octobre 2011.&lt;/p&gt;</bio:biography>
 
@@ -216,5 +216,15 @@
     	<rdfs:seeAlso rdf:resource="http://code.google.com/p/globusdatapad/"/>
     	</foaf:Project>
     </foaf:pastProject>
+    <!-- publications -->
+    <foaf:publication>
+        <foaf:name>Semantic Mashup to Query Localised Data</foaf:name>
+        <dc:title>Semantic Mashup to Query Localised Data</dc:title>
+    	<dc:description xml:lang="en">MSc dissertation</dc:description>
+    	<dc:description xml:lang="fr">Dissertation de Master</dc:description>
+        <foaf:topic rdf:resource="http://dbpedia.org/resource/Semantic_Web" dc:title="Semantic Web"/>
+    	<foaf:homepage rdf:resource="http://martin.filliau.com/msc-dissertation-filliau-2011.pdf"/>
+    	<rdfs:seeAlso rdf:resource="http://martin.filliau.com/msc-dissertation-filliau-2011.pdf"/>
+    </foaf:publication>
 </foaf:Person>
 </rdf:RDF>
